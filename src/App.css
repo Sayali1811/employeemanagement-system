@@ -1,38 +1,288 @@
-.App {
+/* ================= GLOBAL ================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+  width: 100%;
+  height: 100%;
+}
+
+/* ================= HEADING ================= */
+.heading {
   text-align: center;
+  color: white;
+  background: linear-gradient(90deg, #ff7e5f, #ff3d00, #ffcc00);
+  padding: 12px;
+  border-radius: 8px;
+  margin: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ================= NAVBAR ================= */
+.navbar {
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar .nav-link {
+  color: white !important;
+  font-size: 18px;
+  margin-right: 10px;
+  transition: 0.3s;
 }
 
-.App-header {
-  background-color: #282c34;
+.navbar .nav-link:hover {
+  color: #ffd54f !important;
+  transform: scale(1.05);
+}
+
+.navbar .nav-link.active {
+  color: white !important;
+}
+
+/* ================= ADMIN DASHBOARD ================= */
+.admindash {
+  background-image: url("https://wallpaperaccess.com/full/924077.jpg");
+  background-size: cover;
+  background-position: center;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: relative;
+}
+
+.admindash::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: -1; /* ✅ FIX */
+}
+.navbar .nav-link {
+  color: white !important;
+  font-size: 18px;
+  margin-right: 10px;
+  transition: 0.3s;
+  white-space: nowrap; /* Prevent text from going to next line */
+}
+
+/* ================= EMPLOYEE DASHBOARD ================= */
+.empdash {
+  background-image: url("https://images.unsplash.com/photo-1551836022-d5d88e9218df");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* DARK OVERLAY */
+.empdash::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 0;
+}
+
+/* CONTENT ABOVE BACKGROUND */
+.empdash-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-top: 120px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* ================= CAROUSEL ================= */
+.carousel {
+  width: 100%;
+  margin: auto;
 }
 
-@keyframes App-logo-spin {
+.carousel-inner {
+  height: 500px;
+}
+
+.carousel-item {
+  height: 500px;
+}
+
+.carousel-inner img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ================= CARDS ================= */
+.card {
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ================= REGISTER PAGE ================= */
+.register-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  padding: 20px;
+}
+
+/* Glass Form */
+.form-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  color: #fff;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Form Heading */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Labels */
+.form-container label {
+  font-size: 14px;
+  margin-top: 10px;
+  display: block;
+  color: #f1f1f1;
+}
+
+/* Inputs */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 12px;
+
+  border: none;
+  border-radius: 8px;
+
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+
+  transition: 0.3s;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 8px #00d4ff;
+}
+
+.form-control::placeholder {
+  color: #e0e0e0;
+}
+
+/* Button */
+.btn-success {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: white;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.btn-success:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00c6ff;
+}
+
+/* Radio Buttons */
+.register-box input[type="radio"] {
+  margin-left: 10px;
+  accent-color: #00c6ff;
+}
+
+/* ================= TITLE ================= */
+.main-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.sub-title {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-bottom: 25px;
+}
+
+.main-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #007bff;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  text-align: center;
+  max-width: 100% !important;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-25px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 500px) {
+  .form-container {
+    padding: 20px;
+  }
+
+  .carousel-inner,
+  .carousel-item {
+    height: 300px;
+  }
+}
+.logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
